@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Profil Sekolah - SMK Teknologi Harapan</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0047AB", "primary-dark": "#003380",
+                        "accent": "#00B4D8", "background-light": "#F0F4F8",
+                        "background-dark": "#0A192F", "surface": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    backgroundImage: {
+                        'geo-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230047AB' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                        'triangle-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 40H0L20 0Z' fill='%230047AB' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0047AB;
+            border-radius: 4px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-[#0A192F] font-display antialiased overflow-x-hidden selection:bg-primary/30">
+    <nav
+        class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="h-1 w-full bg-gradient-to-r from-primary via-accent to-primary"></div>
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                <a class="flex items-center gap-3 group shrink-0" href="{% url 'home' %}">
+                    <div
+                        class="size-10 rounded-lg bg-primary text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 shadow-lg shadow-primary/30 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-triangle-pattern opacity-30"></div>
+                        <span class="material-symbols-outlined text-2xl relative z-10">school</span>
+                    </div>
+                    <div class="hidden md:flex flex-col">
+                        <h2 class="text-xl font-black leading-none tracking-tighter text-[#0A192F]">SMK TEKNO</h2>
+                        <span class="text-[10px] font-bold text-primary tracking-[0.2em] uppercase">Harapan Bangsa</span>
+                    </div>
+                </a>
+                <div class="hidden xl:flex items-center gap-1">
+                    <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
+                        href="{% url 'home' %}">
+                        Beranda
+                    </a>
+                    <a class="px-3 py-2 text-sm font-bold text-primary transition-colors relative group"
+                        href="#">
+                        Profil Sekolah
+                    </a>
+                    <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
+                        href="#">
+                        Program Keahlian
+                    </a>
+                    <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
+                        href="#">
+                        Ekstrakurikuler
+                    </a>
+                    <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
+                        href="#">
+                        Galeri
+                    </a>
+                    <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
+                        href="#">
+                        Berita
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="hidden lg:flex items-center justify-center size-10 rounded-full text-gray-500 hover:bg-gray-100 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <button
+                        class="relative overflow-hidden flex items-center justify-center h-10 px-6 bg-[#0A192F] text-white text-sm font-bold tracking-wide transition-all duration-300 hover:bg-primary shadow-lg hover:shadow-primary/40 group rounded-tl-xl rounded-br-xl">
+                        <span class="relative z-10 flex items-center gap-2">Login</span>
+                    </button>
+                    <button
+                        class="xl:hidden flex items-center justify-center size-10 rounded-lg bg-gray-50 text-[#0A192F] hover:bg-primary hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full overflow-hidden bg-white pt-20 pb-16">
+        <div class="absolute inset-0 bg-triangle-pattern opacity-60 pointer-events-none"></div>
+        <div class="absolute -top-[10%] -right-[5%] w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl pointer-events-none opacity-50"></div>
+        <div class="absolute top-[40%] -left-[10%] w-[400px] h-[400px] bg-cyan-100 rounded-full blur-3xl pointer-events-none opacity-50"></div>
+
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A192F] leading-[1.1] tracking-tight mb-4">
+                    Profil <span class="text-primary">Sekolah</span>
+                </h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Mengenal lebih dekat SMK Tekno Harapan Bangsa, institusi pendidikan vokasi terkemuka yang mempersiapkan generasi muda bagi industri modern.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Vision & Mission Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white pointer-events-none"></div>
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2WwkiG1c5Kl5tfPvcGJAWEV9K-J3APH9K7zRxzEEz7F9lp8HYR7zS-Zxd4vmQIbBHYdNWm3efcLddTyl0U5iqCDSDIuXDreh7oflpRTmDkXgmOZK1JyUVmDXOX16Fh8liS9Z-DER15_hDV5WLrI4WaEXfwhcjYyF6vmGJG18kuZSCQG9ueMmHAEYLhRGWdz4bMj-uxRne8kXlwSfsrabCRS37hfrc3yVW_afYwm7k2IpVVHVtqTta-mliIcvTdlUEDXoW59beWgs');">
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-black text-[#0A192F] mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-4xl">visibility</span>
+                            Visi
+                        </h2>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            Menjadi institusi pendidikan vokasi yang menghasilkan lulusan berkualitas, berdaya saing global, dan berakhlak mulia, siap memimpin transformasi digital dan inovasi industri.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-black text-[#0A192F] mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-accent text-4xl">target</span>
+                            Misi
+                        </h2>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl mt-1 flex-shrink-0">check_circle</span>
+                                <span>Menyelenggarakan pendidikan berkualitas berbasis kompetensi dan industri 4.0</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl mt-1 flex-shrink-0">check_circle</span>
+                                <span>Mengembangkan hard skills teknis dan soft skills profesional yang relevan</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl mt-1 flex-shrink-0">check_circle</span>
+                                <span>Membangun karakter, integritas, dan semangat kewirausahaan peserta didik</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl mt-1 flex-shrink-0">check_circle</span>
+                                <span>Menciptakan ekosistem pembelajaran yang kolaboratif dengan industri</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sejarah Section -->
+    <section class="py-20 bg-background-light">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-black text-[#0A192F] mb-12 text-center">Sejarah Singkat</h2>
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
+                <div class="max-w-4xl mx-auto space-y-6 text-gray-600 leading-relaxed">
+                    <p>
+                        SMK Tekno Harapan Bangsa didirikan pada tahun 2005 dengan visi untuk menyediakan pendidikan vokasi berkualitas yang responsif terhadap kebutuhan industri. Sejak awal berdiri, sekolah ini berkomitmen untuk menghasilkan lulusan yang tidak hanya menguasai kompetensi teknis tetapi juga memiliki soft skills yang kuat.
+                    </p>
+                    <p>
+                        Dengan dukungan dari berbagai mitra industri ternama, SMK Tekno Harapan Bangsa terus berinovasi dalam pengembangan kurikulum dan fasilitas pembelajaran. Setiap tahun, ribuan siswa lulus dan berkontribusi aktif di berbagai sektor industri, baik di tingkat lokal maupun internasional.
+                    </p>
+                    <p>
+                        Pencapaian demi pencapaian telah diraih, mulai dari penghargaan akademik hingga prestasi di tingkat nasional dan internasional. Komitmen kami adalah terus meningkatkan kualitas pendidikan dan menciptakan generasi profesional yang mampu menghadapi tantangan zaman.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi & Tim Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-black text-[#0A192F] mb-12 text-center">Tim Kepemimpinan</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Kepala Sekolah -->
+                <div class="bg-gradient-to-b from-primary/5 to-transparent rounded-2xl p-6 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                    <div class="size-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-5xl text-primary">account_circle</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0A192F] mb-2">Drs. Ahmad Surya</h3>
+                    <p class="text-sm font-semibold text-primary mb-3">Kepala Sekolah</p>
+                    <p class="text-sm text-gray-600">Pendidik berpengalaman 25+ tahun dalam bidang vokasi dan pengembangan kurikulum berbasis industri.</p>
+                </div>
+
+                <!-- Wakil Kepala Kurikulum -->
+                <div class="bg-gradient-to-b from-accent/5 to-transparent rounded-2xl p-6 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                    <div class="size-24 rounded-full bg-accent/20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-5xl text-accent">account_circle</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0A192F] mb-2">Siti Nurhaliza, S.Pd</h3>
+                    <p class="text-sm font-semibold text-accent mb-3">Wakil Kepala Kurikulum</p>
+                    <p class="text-sm text-gray-600">Spesialis dalam pengembangan kurikulum dan partnership dengan industri untuk menjamin relevansi pembelajaran.</p>
+                </div>
+
+                <!-- Wakil Kepala Sarana -->
+                <div class="bg-gradient-to-b from-primary/5 to-transparent rounded-2xl p-6 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                    <div class="size-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-5xl text-primary">account_circle</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0A192F] mb-2">Ir. Bambang Sutrisno</h3>
+                    <p class="text-sm font-semibold text-primary mb-3">Wakil Kepala Sarana</p>
+                    <p class="text-sm text-gray-600">Mengelola fasilitas dan infrastruktur pembelajaran dengan standar internasional untuk mendukung proses belajar optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section class="py-20 bg-background-light">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-black text-[#0A192F] mb-12 text-center">Fasilitas & Infrastruktur</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Workshop -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-primary/30 group-hover:scale-110 transition-transform duration-500">build_circle</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">build</span>
+                            Workshop & Lab
+                        </h3>
+                        <p class="text-gray-600">Dilengkapi dengan peralatan modern dan teknologi terkini untuk praktik langsung siswa di berbagai bidang keahlian.</p>
+                    </div>
+                </div>
+
+                <!-- Perpustakaan -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-accent/30 group-hover:scale-110 transition-transform duration-500">library_books</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">menu_book</span>
+                            Perpustakaan Digital
+                        </h3>
+                        <p class="text-gray-600">Koleksi lengkap buku teks, jurnal, dan sumber pembelajaran digital untuk mendukung studi siswa.</p>
+                    </div>
+                </div>
+
+                <!-- Laboratorium Komputer -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-cyan-200/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-primary/30 group-hover:scale-110 transition-transform duration-500">computer</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">desktop_mac</span>
+                            Laboratorium Komputer
+                        </h3>
+                        <p class="text-gray-600">Ruang lab dengan komputer berperforma tinggi dan software profesional untuk pembelajaran coding dan desain.</p>
+                    </div>
+                </div>
+
+                <!-- Fasilitas Olahraga -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-cyan-200/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-accent/30 group-hover:scale-110 transition-transform duration-500">sports_basketball</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">sports_soccer</span>
+                            Fasilitas Olahraga
+                        </h3>
+                        <p class="text-gray-600">Lapangan basket, badminton, futsal, dan gym untuk mengembangkan kesehatan dan karakter siswa.</p>
+                    </div>
+                </div>
+
+                <!-- Asrama -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-primary/30 group-hover:scale-110 transition-transform duration-500">home</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">hotel</span>
+                            Asrama Siswa
+                        </h3>
+                        <p class="text-gray-600">Akomodasi nyaman dengan sistem boarding yang mendukung pembentukan karakter dan kedisiplinan siswa.</p>
+                    </div>
+                </div>
+
+                <!-- Kafeteria -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+                    <div class="h-48 bg-gradient-to-br from-accent/20 to-cyan-200/20 flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-8xl text-accent/30 group-hover:scale-110 transition-transform duration-500">restaurant</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0A192F] mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">restaurant</span>
+                            Kafeteria Modern
+                        </h3>
+                        <p class="text-gray-600">Tempat makan yang higienis dengan menu bergizi dan beragam untuk mendukung kebutuhan gizi siswa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-black text-[#0A192F] mb-12 text-center">Prestasi & Penghargaan</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-6 border border-primary/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-primary">emoji_events</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">Akreditasi A</h4>
+                            <p class="text-sm text-gray-600">Standar nasional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-accent/10 to-transparent rounded-xl p-6 border border-accent/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-accent">military_tech</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">5 Juara LKS</h4>
+                            <p class="text-sm text-gray-600">Tingkat Nasional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-6 border border-primary/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-primary">school</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">Sekolah Adiwiyata</h4>
+                            <p class="text-sm text-gray-600">Lingkungan berkelanjutan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-200/10 to-transparent rounded-xl p-6 border border-cyan-200/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-cyan-600">handshake</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">25+ MoU</h4>
+                            <p class="text-sm text-gray-600">Kerjasama Industri</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-6 border border-primary/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-primary">trending_up</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">98% Terserap</h4>
+                            <p class="text-sm text-gray-600">Lulusan bekerja</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-accent/10 to-transparent rounded-xl p-6 border border-accent/20 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="material-symbols-outlined text-4xl text-accent">public</span>
+                        <div>
+                            <h4 class="font-bold text-[#0A192F]">ISO 9001:2015</h4>
+                            <p class="text-sm text-gray-600">Quality Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white pt-16 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-lg bg-primary flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">SMK TEKNO</h3>
+                            <p class="text-xs text-gray-400">Harapan Bangsa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pendidikan vokasi modern yang berorientasi pada masa depan, integritas, dan inovasi teknologi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Jelajahi</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="{% url 'home' %}" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Profil Sekolah</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Program Keahlian</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Berita</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Kontak Kami</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">phone</span>
+                            <span>(0274) 512345</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">mail</span>
+                            <span>info@smktekno.ac.id</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-lg mt-1">location_on</span>
+                            <span>Jl. Raya Harapan No. 123, Yogyakarta</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Ikuti Kami</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="size-10 rounded-lg bg-primary hover:bg-primary-dark flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined">facebook</span>
+                        </a>
+                        <a href="#" class="size-10 rounded-lg bg-primary hover:bg-primary-dark flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined">instagram</span>
+                        </a>
+                        <a href="#" class="size-10 rounded-lg bg-primary hover:bg-primary-dark flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined">language</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+                <p>© 2024 SMK Tekno Harapan Bangsa. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 bg-primary text-white rounded-full shadow-lg shadow-primary/40 hover:bg-primary-dark hover:scale-105 transition-all duration-300 group"
+        href="#">
+        <span class="font-bold text-sm hidden group-hover:block transition-all">Hubungi Kami</span>
+        <span class="material-symbols-outlined text-2xl">forum</span>
+    </a>
+
+</body>
+
+</html>

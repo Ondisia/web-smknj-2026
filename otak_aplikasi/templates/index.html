@@ -85,7 +85,7 @@
                 </a>
                 <div class="hidden xl:flex items-center gap-1">
                     <a class="px-3 py-2 text-sm font-bold text-[#0A192F] hover:text-primary transition-colors relative group"
-                        href="#">
+                        href="{% url 'home' %}">
                         Beranda
                         <span
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0"></span>
@@ -100,7 +100,7 @@
                         <div
                             class="absolute top-full left-0 w-56 bg-white shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 border-t-4 border-primary ring-1 ring-black/5 z-50">
                             <a class="block px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-primary rounded-lg transition-colors"
-                                href="#">Profil Sekolah</a>
+                                href="{% url 'profile' %}">Profil Sekolah</a>
                             <a class="block px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-primary rounded-lg transition-colors"
                                 href="#">Visi &amp; Misi</a>
                             <a class="block px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-primary rounded-lg transition-colors"
